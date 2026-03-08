@@ -61,47 +61,42 @@ body {
 
 /* HERO */
 
-/* Keep your main hero styles mostly the same, but move alignment to the inner content */
 .hero {
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Move these two properties:
-    text-align: center;
-    color: #41431B;
-    */
     background-image: url('../images/main_image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative; /* Useful if you need to position things absolutely later */
 }
 
-/* NEW: The Semi-Transparent Text Box */
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.4); /* Black with 40% transparency */
-    padding: 2rem; /* Add padding to give the text breathing room within the box */
-    border-radius: 8px; /* Optional: Softens the corners of the box */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Adds depth to the box */
-    text-align: center; /* Alignment properties were moved here */
-    color: #41431B; /* Moved the dark color here, though we may change it later (see below) */
+    /* The Box: Dark and semi-transparent */
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    /* The Text: Must be light to be readable on the dark box */
+    color: #FFFFFF; 
+    /* Limits width so it doesn't stretch to the screen edges on mobile */
+    max-width: 80%;
 }
 
-.hero h2 {
+.hero-content h2 {
     font-size: 3rem;
-    margin: 0; /* Ensures h2 default margins don't break the box structure */
+    margin-bottom: 20px;
 }
 
-/* Stylistic improvement to the button to match the new box */
-.btn {
+/* Styling the "Kaart" button inside the box */
+.hero-content .btn {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #A3A36C; /* A lighter shade of your existing dark color */
-    color: white; /* White text on the button is high contrast */
+    padding: 10px 25px;
+    background-color: #E2E2BE; /* A light cream color for contrast */
+    color: #41431B; /* Your original dark green for the button text */
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 5px;
     font-weight: bold;
 }
 
