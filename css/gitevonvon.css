@@ -67,7 +67,10 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgb(237, 232, 208);
+    background-image: url('../images/main_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #41431B;
 }
 
