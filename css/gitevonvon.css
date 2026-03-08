@@ -13,12 +13,13 @@ body {
     min-height: 100vh;
 }
 
-body, html {
+html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    width: 100%;
+    /* Prevents side-scrolling on mobile */
+    overflow-x: hidden; 
 }
-
 /* NAVBAR */
 
 .navbar {
@@ -68,7 +69,11 @@ body, html {
 /* HERO */
 
 .hero {
-    height: 100vh;
+    /* Use min-height instead of height for better mobile behavior */
+    min-height: 100vh; 
+    /* Webkit fix for older mobile browsers */
+    min-height: -webkit-fill-available; 
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,23 +81,24 @@ body, html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%;
 }
 
 .hero-content {
-    /* The Box: Dark and semi-transparent */
-    background-color: rgba(0, 0, 0, 0.6); 
-    padding: 40px;
-    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 12px;
     text-align: center;
-    /* The Text: Must be light to be readable on the dark box */
-    color: #FFFFFF; 
-    /* Limits width so it doesn't stretch to the screen edges on mobile */
-    max-width: 80%;
+    color: #FFFFFF;
+    /* CRITICAL: Keep the box from being wider than the phone screen */
+    width: 90%; 
+    max-width: 500px; 
+    margin: 0 10px;
 }
 
 .hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 8vw, 3rem); 
+    margin-bottom: 15px;
 }
 
 /* Styling the "Kaart" button inside the box */
@@ -135,7 +141,7 @@ body, html {
 footer {
     background-color: #000000;
     color: white;
-    padding: 20px 20px;
+    padding: 20px 0;
     margin-top: 0;
 }
 
