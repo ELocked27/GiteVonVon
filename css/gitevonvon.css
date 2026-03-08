@@ -62,7 +62,8 @@ body {
 /* HERO */
 
 .hero {
-    height: 70vh;
+    /* Change 70vh to 100vh to fill the full screen height */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +71,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+    /* Ensure no margin is pushing the footer away */
+    margin-bottom: 0; 
 }
 
 .hero-content {
