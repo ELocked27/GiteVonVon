@@ -15,8 +15,8 @@
 <header>
     <nav class="navbar">
         <h1 class="logo">Gitevonvon</h1>
-
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="home_fr.html">Accueil</a></li>
             <li><a href="gallery_fr.html">Galerie</a></li>
             <li><a href="about_fr.html">À propos</a></li>
@@ -24,6 +24,19 @@
         </ul>
     </nav>
 </header>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 
 <body>
 

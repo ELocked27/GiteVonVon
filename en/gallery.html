@@ -15,14 +15,28 @@
 <header>
     <nav class="navbar">
         <h1 class="logo">Gitevonvon</h1>
-
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="home.html">Home</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="pricelist.html">Pricelist</a></li>
         </ul>
     </nav>
+</header>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 </header>
 
 <body>  
