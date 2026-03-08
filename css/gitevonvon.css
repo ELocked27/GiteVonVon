@@ -61,31 +61,48 @@ body {
 
 /* HERO */
 
+/* Keep your main hero styles mostly the same, but move alignment to the inner content */
 .hero {
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Move these two properties:
     text-align: center;
+    color: #41431B;
+    */
     background-image: url('../images/main_image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #41431B;
+    position: relative; /* Useful if you need to position things absolutely later */
+}
+
+/* NEW: The Semi-Transparent Text Box */
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 40% transparency */
+    padding: 2rem; /* Add padding to give the text breathing room within the box */
+    border-radius: 8px; /* Optional: Softens the corners of the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Adds depth to the box */
+    text-align: center; /* Alignment properties were moved here */
+    color: #41431B; /* Moved the dark color here, though we may change it later (see below) */
 }
 
 .hero h2 {
     font-size: 3rem;
+    margin: 0; /* Ensures h2 default margins don't break the box structure */
 }
 
+/* Stylistic improvement to the button to match the new box */
 .btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    background: #AEB784;
-    color: black;
+    padding: 0.75rem 1.5rem;
+    background-color: #A3A36C; /* A lighter shade of your existing dark color */
+    color: white; /* White text on the button is high contrast */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 
