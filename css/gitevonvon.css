@@ -9,19 +9,19 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent side-scroll on mobile */
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    /* This makes the image the background for the ENTIRE site */
+    /* Image is now the base layer of the whole site */
     background-image: url('../images/main_image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Parallax effect: image stays still while you scroll */
-    background-color: rgb(237, 232, 208); /* Fallback color */
+    background-attachment: fixed; 
+    background-color: rgb(237, 232, 208);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -35,15 +35,11 @@ body {
     background: #41431B;
     color: white;
     padding: 1rem 2rem;
-    position: sticky; /* Keeps navbar at the top as you scroll */
-    top: 0;
+    position: relative;
     z-index: 2000;
 }
 
-.logo {
-    font-weight: 600;
-    margin: 0;
-}
+.logo { font-weight: 600; margin: 0; }
 
 .hamburger {
     display: none;
@@ -63,16 +59,13 @@ body {
 .nav-links a {
     text-decoration: none;
     color: white;
-    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #E9762B;
-}
+.nav-links a:hover { color: #E9762B; }
 
-/* HERO SECTION - Now floating on the body background */
+/* HERO SECTION */
 .hero {
-    height: 100vh; /* Takes up full screen on PC */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,45 +73,37 @@ body {
 }
 
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent box for readability */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 12px;
     text-align: center;
     color: #FFFFFF;
     width: 90%;
-    max-width: 600px;
-    backdrop-filter: blur(5px); /* Modern 'glass' effect */
+    max-width: 500px;
 }
 
 .hero-content h2 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    margin-bottom: 15px;
 }
 
 .hero-content .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 10px 25px;
     background-color: #E2E2BE;
     color: #41431B;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-weight: bold;
-    transition: transform 0.2s;
 }
 
-.hero-content .btn:hover {
-    transform: scale(1.05);
-}
-
-/* CONTENT SECTIONS */
+/* GALLERY, ABOUT, PRICELIST - RESTORED COLORS */
 .gallery-container, .about-container, .pricelist-container {
-    background: rgba(169, 176, 122, 0.95); /* Slightly transparent to see background image */
+    background: #a9b07a;
     padding: 40px;
     border-radius: 20px;
     width: 90%;
-    max-width: 1100px;
     margin: 50px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .gallery {
@@ -129,34 +114,57 @@ body {
 
 .gallery img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.gallery img.big {
-    grid-column: span 3;
-    height: 400px;
+.gallery img.big { grid-column: span 3; }
+
+.about, .pricelist {
+    color: #41431B;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
 }
 
-/* FOOTER */
+/* FOOTER - RESTORED WHATSAPP AND LINK COLORS */
 footer {
     background-color: #000000;
     color: white;
-    padding: 40px 20px;
-    margin-top: auto; /* Pushes footer to bottom if content is short */
+    padding: 20px 0;
+    margin-top: 0;
 }
 
 .footer-content {
     text-align: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
+}
+
+.footer-contact p { margin: 5px 0; }
+
+/* RESTORED: Footer Links are white again */
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-contact a:hover { text-decoration: underline; }
+
+/* RESTORED: Your perfect WhatsApp icon alignment */
+.whatsapp-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    position: relative;
+    top: -2px; 
 }
 
 .footer-bottom {
-    margin-top: 20px;
+    text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .designer-credit {
@@ -166,24 +174,21 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 5px 10px;
-    font-size: 11px;
-    z-index: 3000;
+    font-size: 12px;
+    z-index: 1000;
 }
+
+.designer-credit a { color: rgb(223, 119, 119); text-decoration: none; }
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    body {
-        /* Mobile browsers struggle with fixed backgrounds, scroll is safer */
-        background-attachment: scroll; 
-    }
+    body { background-attachment: scroll; }
 
     .hero {
-        height: 100vh; /* Keep it full screen even on mobile */
+        height: 100vh; /* Fixed mobile height */
     }
 
-    .hamburger {
-        display: block;
-    }
+    .hamburger { display: block; }
 
     .nav-links {
         position: absolute;
@@ -195,21 +200,10 @@ footer {
         background: #41431B;
     }
 
-    .nav-links.active {
-        display: flex;
-    }
+    .nav-links.active { display: flex; }
 
-    .nav-links a {
-        padding: 1.5rem;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+    .gallery { grid-template-columns: 1fr; }
+    .gallery img.big { grid-column: span 1; }
 
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img.big {
-        grid-column: span 1;
-        height: 250px;
-    }
+    .about-container, .pricelist-container { width: 95%; padding: 20px; }
 }
