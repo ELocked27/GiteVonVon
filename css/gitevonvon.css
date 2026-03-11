@@ -209,6 +209,14 @@ footer {
   transform: scale(1.05);
 }
 
+.gallery-img {
+  transition: is ease;
+}
+
+.gallery-img {
+  overflow:hidden;
+}
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     body { background-attachment: scroll; }
@@ -237,4 +245,5 @@ footer {
     .about-container, .pricelist-container { width: 95%; padding: 20px; }
 
 }
+
 
