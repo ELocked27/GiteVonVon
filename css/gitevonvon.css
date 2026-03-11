@@ -184,6 +184,27 @@ footer {
 
 .designer-credit a { color: rgb(223, 119, 119); text-decoration: none; }
 
+#imagePopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+#imagePopup img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.gallery-img {
+  cursor: pointer;
+}
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     body { background-attachment: scroll; }
@@ -210,4 +231,5 @@ footer {
     .gallery img.big { grid-column: span 1; }
 
     .about-container, .pricelist-container { width: 95%; padding: 20px; }
+
 }
