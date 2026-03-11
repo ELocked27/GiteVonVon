@@ -205,16 +205,16 @@ footer {
   cursor: pointer;
 }
 
+.gallery-container {
+  overflow: hidden;
+}
+
+.gallery-img {
+  transition: transform 0.3s ease;
+}
+
 .gallery-img:hover {
-  transform: scale(1.05);
-}
-
-.gallery-img {
-  transition: is ease;
-}
-
-.gallery-img {
-  overflow:hidden;
+  transform: scale(1.1);
 }
 
 /* MOBILE RESPONSIVENESS */
@@ -245,5 +245,6 @@ footer {
     .about-container, .pricelist-container { width: 95%; padding: 20px; }
 
 }
+
 
 
