@@ -43,20 +43,41 @@
 
 <section class="gallery-container">
 
-<h2>Gallery</h2>
+<h2>Galerie</h2>
 
 <div class="gallery">
 
 <img src="../images/terrasse2_image.jpg" class="big">
-<img src="../images/main_image.jpg">
-<img src="../images/stair_image.jpg">
-<img src="../images/bedroom_image.jpg">
-<img src="../images/bedroom2_image.jpg">
-<img src="../images/beds_image.jpg">
-<img src="../images/outside.jpg">
+<img src="../images/main_image.jpg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/stair_image.jpg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/bedroom_image.jpg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/bedroom2_image.jpg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/beds_image.jpg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/outside.jpg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/truck thingy.jpeg" class="gallery-img" onclick="openImage(this)">
+<img src="../images/bedroom3.jpeg" class="gallery-img" onclick="openImage(this)">
+
 </div>
 
 </section>
+
+<div id="imagePopup" onclick="closeImage()">
+  <img id="popupImg">
+</div>
+
+<script>
+function openImage(img) {
+  const popup = document.getElementById("imagePopup");
+  const popupImg = document.getElementById("popupImg");
+
+  popup.style.display = "flex";
+  popupImg.src = img.src;
+}
+
+function closeImage() {
+  document.getElementById("imagePopup").style.display = "none";
+}
+</script>
 
 <footer>
     <div class="footer-content">
@@ -77,6 +98,7 @@
 
 
 </body>
+
 
 
 
