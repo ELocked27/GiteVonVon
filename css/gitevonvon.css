@@ -205,6 +205,10 @@ footer {
   cursor: pointer;
 }
 
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     body { background-attachment: scroll; }
@@ -233,3 +237,4 @@ footer {
     .about-container, .pricelist-container { width: 95%; padding: 20px; }
 
 }
+
